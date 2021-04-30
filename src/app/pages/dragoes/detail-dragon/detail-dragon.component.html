@@ -1,0 +1,35 @@
+<div class="container">
+  <div>
+    <h2>DETALHES</h2>
+  </div>
+  <ul class="responsive-table">
+    <li class="table-header" style="font-weight: bolder">
+      <div class="col col-1">Criado em</div>
+      <div class="col col-2">Nome</div>
+      <div class="col col-3">Modelo</div>
+      <div class="col col-4" *ngIf="historia || historias">História</div>
+    </li>
+    <li class="table-row" *ngIf="dragao">
+      <div class="col col-1" data-label="Criado em">
+        {{ formatarData(dragao.createdAt) }}
+      </div>
+      <div class="col col-2" data-label="Nome">
+        {{ dragao.name }}
+      </div>
+      <div class="col col-3" data-label="Tipo">{{ dragao.type }}</div>
+      <div
+        class="col col-4 btn-toolbar"
+        data-label="História"
+        *ngIf="historias"
+      >
+        <div *ngFor="let historia of historias">- {{ historia }}</div>
+      </div>
+      <div class="col col-4 btn-toolbar" data-label="História" *ngIf="historia">
+        <div>- {{ historia }}</div>
+      </div>
+    </li>
+  </ul>
+  <div class="row" style="float: right">
+    <button type="button" [routerLink]="['/home']">Voltar</button>
+  </div>
+</div>

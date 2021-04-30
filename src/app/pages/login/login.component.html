@@ -1,0 +1,21 @@
+<div class="login-page">
+  <h1>LOGIN - DRAGÕES</h1>
+  <div class="form">
+    <form [formGroup]="form" (ngSubmit)="login()" class="login-form">
+      <input
+        type="text"
+        placeholder="Usuário"
+        formControlName="usuario"
+        requiredminlength="5"
+      />
+      <input
+        type="password"
+        placeholder="Senha"
+        formControlName="senha"
+        requiredminlength="8"
+      />
+      <button type="submit" [disabled]="!form.valid">Login</button>
+      <p *ngIf="mensagem != ''" class="message">{{ mensagem }}</p>
+    </form>
+  </div>
+</div>

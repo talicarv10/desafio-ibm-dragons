@@ -1,0 +1,37 @@
+<div class="container">
+  <div>
+    <h2>LISTA DE DRAGÕES</h2>
+  </div>
+  <ul class="responsive-table">
+    <div style="text-align: right; padding-bottom: 10px">
+      <button (click)="goToAddDragonPage()">Adicionar novo dragão</button>
+    </div>
+    <li class="table-header" style="font-weight: bolder">
+      <div class="col col-1">Criado em</div>
+      <div class="col col-2">Nome</div>
+      <div class="col col-3">Modelo</div>
+      <div class="col col-4">Ações</div>
+    </li>
+    <li class="table-row" *ngFor="let dragao of dragoes">
+      <div class="col col-1" data-label="Criado em">
+        {{ formatarData(dragao.createdAt) }}
+      </div>
+      <div class="col col-2" data-label="Nome">
+        {{ dragao.name }}
+      </div>
+      <div class="col col-3" data-label="Tipo">{{ dragao.type }}</div>
+      <div class="col col-4 btn-toolbar" data-label="Ações">
+        <button (click)="editDragon(dragao)">Editar</button>
+        <button (click)="deleteDragon(dragao)" style="margin-left: 5px">
+          Deletar
+        </button>
+        <button
+          (click)="goToDetailsDragonPage(dragao)"
+          style="margin-left: 5px"
+        >
+          Detalhar
+        </button>
+      </div>
+    </li>
+  </ul>
+</div>

@@ -1,0 +1,82 @@
+<div class="container">
+  <h2>EDITAR DRAGÃO</h2>
+  <form [formGroup]="editForm" (ngSubmit)="onSubmit()">
+    <div class="row">
+      <div class="col-10">
+        <label>ID</label>
+      </div>
+      <div class="col-75">
+        <input
+          [attr.disabled]="true"
+          type="text"
+          formControlName="id"
+          placeholder="ID"
+          name="id"
+          id="id"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <label>Nome</label>
+      </div>
+      <div class="col-75">
+        <input
+          type="text"
+          formControlName="name"
+          placeholder="Nome"
+          name="name"
+          id="name"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <label>Modelo</label>
+      </div>
+      <div class="col-75">
+        <input
+          type="text"
+          formControlName="type"
+          placeholder="Modelo"
+          name="type"
+          id="type"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <label>Criado em:</label>
+      </div>
+      <div class="col-75">
+        <input
+          [attr.disabled]="true"
+          type="text"
+          formControlName="createdAt"
+          placeholder="Criado em"
+          name="createdAt"
+          id="createdAt"
+        />
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-10">
+        <label>História</label>
+      </div>
+      <div class="col-75">
+        <textarea
+          formControlName="histories"
+          placeholder="História"
+          name="histories"
+          id="histories"
+          placeholder="Conte uma história sobre o dragão.."
+          style="height: 200px"
+        ></textarea>
+      </div>
+    </div>
+    <div class="row div-submit-button">
+      <button type="submit">Salvar</button>
+      <button type="button" [routerLink]="['/home']">Voltar</button>
+    </div>
+  </form>
+</div>
